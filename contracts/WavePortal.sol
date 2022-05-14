@@ -10,7 +10,7 @@ contract WavePortal {
      */
     uint256 private seed;
 
-    event NewWave(address indexed from, uint256 timestamp, string message,uint ethWon,boolean);
+    event NewWave(address indexed from, uint256 timestamp, string message,uint256 ethWon, bool);
 
     struct Wave {
         address waver;
@@ -67,9 +67,9 @@ contract WavePortal {
             );
             (bool success, ) = (msg.sender).call{value: prizeAmount}("");
             require(success, "Failed to withdraw money from contract.");
-            emit NewWave(msg.sender, block.timestamp, _message,prizeAmount,true);
+            emit NewWave(msg.sender, block.timestamp, _message,prizeAmount, true);
         }else{
-            emit NewWave(msg.sender, block.timestamp, _message,0, false);
+            emit NewWave(msg.sender, block.timestamp, _message, 0, false);
         }
 
         
