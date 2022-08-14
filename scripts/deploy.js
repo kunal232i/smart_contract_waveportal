@@ -14,7 +14,7 @@ const main = async () => {
   console.log("WavePortal address: ", waveContract.address);
 };
 
-const runMain = async () => {
+const Main = async () => {
   try {
     await main();
     process.exit(0);
@@ -24,4 +24,4 @@ const runMain = async () => {
   }
 };
 
-runMain();
+Main();

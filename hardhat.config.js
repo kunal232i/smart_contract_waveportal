@@ -1,6 +1,7 @@
 require("@nomiclabs/hardhat-waffle");
 require("dotenv").config();
 console.log(process.env);
+require("@nomiclabs/hardhat-etherscan");
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -24,8 +25,11 @@ module.exports = {
   solidity: "0.8.0",
   networks: {
     rinkeby: {
-      url: process.env.STAGING_ALCHEMY_KEY,
+      url: "https://rinkeby.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161",
       accounts: [process.env.PRIVATE_KEY],
     },
+  },
+  etherscan: {
+    apiKey: process.env.API_KEY,
   },
 };
